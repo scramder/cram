@@ -1,0 +1,414 @@
+/* Estilos globales*/
+:root {
+  --animation-delay: 0s;
+  --color-negro: #000000;
+  --color-fondo: #3d3935;
+  --color-texto: #e2e1e1;
+  --color-high: #CDF745;
+
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto Flex, sans-serif;
+  font-size: 16px;
+  background-color: var(--color-negro);
+  color: var(--color-texto);
+}
+
+/* Titulos generales */
+.title{
+  width: 100%;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  letter-spacing: 0.8em;
+  height: 10%;
+  align-items: center;
+  justify-content: center;
+}
+.title2 {
+  width: 100%;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  height: 3em;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+}
+/* Fin titulos generales */
+.links{
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-negro);
+  padding-left: 2em;
+  padding-right: 2em;
+  background-color: var(--color-texto);
+  border-style: hidden;
+  border-radius: 0.5em;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  
+}
+
+.links:hover{
+  background-color: var(--color-high);
+  color: var(--color-negro);
+  filter: drop-shadow(1px 1px 10px var(--color-high));
+}
+
+
+/* Fin estilos globales */
+/* Estilos para la sección Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--color-negro);
+}
+.nom {
+  display: flex;
+  flex-direction: row;
+  padding: 10vw;
+  background-color: var(--color-fondo);
+}
+.cram {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 0.8em;
+  text-transform: uppercase;
+  margin-right: 0.5em;
+  padding-right: 0.5em;
+}
+/* Animaciones en hero*/
+.container.msj {
+  font-size: 1em;
+  letter-spacing: 0.8em;
+  position: absolute;
+  opacity: 0; 
+  animation: fadeInOut 12s infinite;
+  animation-delay: var(--animation-delay); 
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  8.33% { opacity: 1; }
+  25% { opacity: 1; }
+  33.33% { opacity: 0; }
+  100% { opacity: 0; }
+}
+/* Fin animaciones en hero*/
+/* Animacion de selectores*/  
+.select {
+  background-color: #00000066;
+  border-bottom: 1px solid #ffffff40;
+  box-shadow: 0 0 8px #00000066 inset;
+  border-radius: 16px;
+  margin: 0;
+  padding: 0 30px;
+}
+
+.select > .item > a {
+  display: inline-block;
+  letter-spacing: -1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--color-texto);
+}
+
+.select {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.3em;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+}
+
+.select > .item {
+  float: left;
+  height: 100%;
+  list-style: none;
+  margin: 0 30px;
+}
+
+.select > .item > a {
+  text-shadow: 0 -50px var(--color-high);
+  padding-top: 50px;
+  margin-top: -50px;
+  transition: 0.25s cubic-bezier(0, 0, .5, 1.4);
+}
+
+.select > .item > a:hover {
+  margin-top: 0;
+}
+/* Fin animacion de selectores */
+/* Fin seccion Hero */
+/* Estilos projects */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-card {
+  width: 400px;
+  height: 300px;
+  margin: 5px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+  border-style: hidden;
+  margin: 10px;
+  padding: 5px;
+  overflow: hidden;
+  background-color: var(--color-fondo);
+}
+.img-card{
+  border-radius: 5px;
+  border-style: hidden;
+  overflow: hidden;
+  height: 250px;
+}
+
+.project-card img {
+  width: 100%;
+  overflow: hidden;
+  
+}
+
+.project-card .hover-img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover .hover-img {
+  transform: scale(1.05);
+}
+
+/* Estilos para el overlay */
+.project-overlay {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo transparente al 50% */
+  display: none;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  z-index: 1000;
+/*
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: radial-gradient(circle closest-corner at left, var(--color-fondo), var(--color-negro));
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  */
+}
+
+.project-content {
+  background-color: var(--color-fondo);
+  padding: 0.5em;
+  border-radius: 5px;
+  width: 800px;
+  display: flex;
+}
+
+.overlay-left {
+  width: 50%;
+  margin-right: 1em;
+}
+
+.overlay-left img {
+  max-width: 600px;
+  max-height: 600px;
+  display: block;
+  
+}
+
+.overlay-right {
+  width: 50%;
+}
+
+/* Estilos para la X de cierre */
+.close-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 3em;
+  color: white;
+  cursor: pointer;
+}
+/* Fin estilos projects */
+/* Estilos para la sección Habilidades */
+.skills {
+  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--color-negro);
+  padding-bottom: 200px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 90%;
+  background-color: var(--color-negro);
+  padding-top: 1em;
+}
+
+.skill-category {
+  width: 45%; 
+  margin-bottom: 30px; 
+}
+
+.skill-category h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  width:50%;
+}
+
+.skill-category .skills-list {
+  display: block;
+  text-align: left;
+}
+
+.skill-category .skills-item {
+  font-size: 18px;
+  margin-bottom: 10px;
+
+}
+
+/* Barras de progreso */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--color-fondo);
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--color-high);
+  border-radius: 5px;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+[data-percent="90"] .progress { width: 90%; }
+[data-percent="80"] .progress { width: 80%; }
+[data-percent="70"] .progress { width: 70%; }
+[data-percent="60"] .progress { width: 60%; }
+[data-percent="50"] .progress { width: 50%; }
+[data-percent="40"] .progress { width: 40%; }
+[data-percent="30"] .progress { width: 30%; }
+[data-percent="20"] .progress { width: 20%; }
+[data-percent="10"] .progress { width: 10%; }
+/* Fin barras de progreso */
+
+.description {
+  font-size: 14px;
+  color: var(--color-texto);
+  margin-top: 5px;
+  text-indent: 20px
+}
+/* Fin estilos seccion habilidades */
+/* Estilos sección de contacto */
+.contact {
+  background-color: var(--color-negro);
+  min-height: 100vh;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-media, .whatsapp-form {
+  width: 48%;
+  padding: 20px;
+  border-right: 1px solid var(--color-fondo);
+}
+
+/* Estilos para de redes sociales */
+.social-links {
+  padding-left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-link {
+  margin: 10px;
+}
+
+.social-link img {
+  width: 50px;
+  height: 50px;
+ 
+}
+.social-link img {
+  transition: filter 0.3s ease-in-out;
+  filter: drop-shadow(0 0 0 transparent);
+  
+}
+
+.social-link img:hover {
+  filter: drop-shadow(1px 1px 10px var(--color-high));
+
+}
+
+.social-media {
+  background-image: radial-gradient(circle closest-corner at left, var(--color-fondo), var(--color-negro));
+ 
+}
+
+/* Estilos para el formulario de WhatsApp */
+.whatsapp-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.whatsapp-form input, .whatsapp-form textarea {
+  width: 75%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-texto);
+  border-radius: 5px;
+}
+
+.whatsapp-form button {
+  background-color: var(--color-high);
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.whatsapp-form button:hover {
+  filter: drop-shadow(1px 1px 10px var(--color-high));
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: var(--color-fondo);
+  margin-top: 10px;
+  text-align: center; 
+}
+/* Fin estilos sección de contacto */
+/* Fin Estilos */ 
