@@ -5,12 +5,14 @@ html {
 }
 
 body {
-  min-height: 100%;
   background-color: #3d3935;
-  text-align: center;
-  padding: 20px 0;
-  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
+
 .main {
   display: flex;
   height: auto;
