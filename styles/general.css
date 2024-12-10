@@ -76,12 +76,14 @@ body {
   align-items: center;
   background-color: var(--color-negro);
 }
+
 .nom {
   display: flex;
   flex-direction: row;
   padding: 10vw;
   background-color: var(--color-fondo);
 }
+
 .cram {
   font-size: 2em;
   font-weight: bold;
@@ -153,6 +155,25 @@ body {
   margin-top: 0;
 }
 /* End selectors animation */
+/* Media querys */
+@media (max-width: 351px) {
+  .nom {
+    display: flex;
+    flex-direction: row;
+    padding: 10vw;
+    background-color: var(--color-fondo);
+  }
+  
+  .cram {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 0.8em;
+    text-transform: uppercase;
+    margin-right: 0.5em;
+    padding-right: 0.5em;
+  }
+  
+}
 /* End Hero */
 /* Projects */
 .projects-container {
