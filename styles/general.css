@@ -272,7 +272,6 @@ body {
   min-height: 100vh;
   width: 100%;
   background-color: var(--color-negro);
-  padding-bottom: 200px;
 }
 
 .skills-container {
@@ -280,7 +279,7 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 90%;
+  max-width: 100%;
   background-color: var(--color-negro);
   padding-top: 1em;
 }
@@ -425,3 +424,40 @@ body {
   text-align: center; 
 }
 /* End contact */
+
+
+/* About Me */
+
+.aboutme-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  
+}
+
+.aboutme-text {
+  width: 100%;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  background-color: var(--color-fondo);
+  top: 2em;
+  bottom: 2em;
+}
+.aboutme-img {
+  display: flex;
+  align-items: center;
+ padding-left: 2em;
+
+}
+
+.aboutme-img img{
+  height: 25em;
+  border-radius: 3%;
+  border-width: 0;
+  
+}
+
+
+/* End About Me */
