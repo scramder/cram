@@ -22,6 +22,7 @@ body {
   font-size: 16px;
   background-color: var(--color-negro);
   color: var(--color-texto);
+  scroll-snap-type: y mandatory;
 }
 
 /* Titles */
@@ -343,10 +344,17 @@ body {
 /* End skills */
 /* About Me */
 
+.aboutme {
+  min-height: 100vh;
+
+}
+
 .aboutme-container {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
   
 }
 
