@@ -25,6 +25,24 @@ body {
   scroll-snap-type: y mandatory;
 }
 
+.nav-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 5%;
+  
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: #555;
+}
+
 /* Titles */
 .title{
   width: 100%;
