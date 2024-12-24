@@ -112,21 +112,20 @@ body {
   padding-right: 0.5em;
 }
 /* Hero animations */
+.nom{
+  overflow: hidden;
+}
 .container.msj {
   font-size: 1em;
   letter-spacing: 0.8em;
+  color: var(--color-texto);
+  opacity: 0; /* Ocultos por defecto */
   position: absolute;
-  opacity: 0; 
-  animation: fadeInOut 12s infinite;
-  animation-delay: var(--animation-delay); 
+  transition: opacity 1s ease-in-out;
 }
 
-@keyframes fadeInOut {
-  0% { opacity: 0; }
-  8.33% { opacity: 1; }
-  25% { opacity: 1; }
-  33.33% { opacity: 0; }
-  100% { opacity: 0; }
+.container.msj.active {
+  opacity: 1; /* Solo el mensaje activo se muestra */
 }
 /* End hero animations */
 /* Selectors animations*/  

@@ -1,5 +1,19 @@
-const elements = document.querySelectorAll('.container.msj'); // Selecciona todos los elementos con las clases 'container' y 'mensaje'
+const elements = document.querySelectorAll('.container.msj'); // Selecciona todos los mensajes
+let currentIndex2 = 0; // Índice del mensaje actual
 
-elements.forEach((element, index) => {
-  element.style.setProperty('--animation-delay', `${index * 3}s`); // Asigna el retraso según el índice del elemento
-});
+function showNextMessage() {
+  // Oculta el mensaje actual
+  elements[currentIndex2].classList.remove('active');
+
+  // Incrementa el índice al siguiente mensaje (o regresa al primero)
+  currentIndex2 = (currentIndex2 + 1) % elements.length;
+
+  // Muestra el nuevo mensaje
+  elements[currentIndex2].classList.add('active');
+}
+
+// Inicializar mostrando el primer mensaje
+elements[currentIndex2].classList.add('active');
+
+// Cambiar mensaje cada 3 segundos
+setInterval(showNextMessage, 3000);
