@@ -1,2 +1,0 @@
-# cram
-In this repository, you will find the code for my website, which is constantly updated with new techniques I am developing. The repository includes a feature for uploading changes when I make a commit. Feel free to review the code.
