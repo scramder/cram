@@ -1,0 +1,103 @@
+/* ===== IMPORT VARIABLES ===== */
+@import 'variables.css';
+
+/* ===== EXPERIENCE ===== */
+.experience {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-surface);
+}
+
+.timeline {
+  position: relative;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-border);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--spacing-2xl);
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--color-accent);
+  border: 4px solid var(--color-surface);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timeline-date {
+  flex: 0 0 7.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+}
+
+.timeline-content {
+  flex: 1;
+  background-color: var(--color-background);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin: 0 var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.timeline-content h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-content h4 {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+}
+
+.timeline-content p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.timeline-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.timeline-skills span {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+}
