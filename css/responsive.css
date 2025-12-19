@@ -31,7 +31,7 @@
   .nav-menu {
     position: fixed;
     top: 4.375rem;
-    left: -100%;
+    right: -100%;
     width: 100%;
     height: calc(100vh - 4.375rem);
     background-color: white;
@@ -39,12 +39,12 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 2rem;
-    transition: left 0.3s ease;
+    transition: right 0.3s ease;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   }
   
   .nav-menu.active {
-    left: 0;
+    right: 0;
   }
   
   .nav-toggle {
@@ -63,6 +63,21 @@
     transform: rotate(-45deg) translate(7px, -6px);
   }
   
+  /* Ocultar la ventana de código en móviles */
+  .hero-code-snippet {
+    display: none;
+  }
+  
+  /* Hacer que la imagen de fondo ocupe 100vh con zoom */
+  .hero::before {
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .hero {
+    height: 100vh;
+  }
+  
   .hero-title {
     font-size: var(--font-size-4xl);
   }
@@ -76,27 +91,39 @@
     justify-content: center;
   }
   
+  /* Ocultar la línea de tiempo en móviles */
   .timeline::before {
-    left: 1.25rem;
+    display: none;
   }
   
   .timeline-item {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 3.125rem;
+    display: block;
+    padding-left: 0;
+    margin-bottom: var(--spacing-xl);
   }
   
+  /* Ocultar los puntos de la timeline en móviles */
   .timeline-item::before {
-    left: 1.25rem;
-    transform: translateX(-50%);
+    display: none;
   }
   
   .timeline-date {
-    margin-bottom: var(--spacing-sm);
+    display: block;
+    text-align: left;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-xs);
+    padding: 0;
+    background: none;
+    border: none;
+    width: auto;
+    flex: none;
   }
   
   .timeline-content {
     margin: 0;
+    width: 100%;
   }
   
   .tech-grid {
@@ -121,11 +148,7 @@
     font-size: var(--font-size-3xl);
   }
   
-  .hero-code-snippet {
-    font-size: 0.7rem;
-    padding: var(--spacing-sm);
-  }
-  
+  /* La ventana de código ya está oculta en móviles, no necesitamos estos estilos */
   .code-indent {
     padding-left: 1rem;
   }
