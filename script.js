@@ -300,3 +300,39 @@ function copyToClipboard(text) {
 window.downloadCV = downloadCV;
 window.scrollToTop = scrollToTop;
 window.copyToClipboard = copyToClipboard;
+// ===== HITBOX DEBUG MODE ===== 
+function initHitboxToggle() {
+    let hitboxMode = false;
+    
+    document.addEventListener('keydown', function(e) {
+        // Toggle hitboxes with 'H' key
+        if (e.key.toLowerCase() === 'h' && !e.ctrlKey && !e.altKey && !e.metaKey) {
+            // Don't trigger if user is typing in an input field
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                return;
+            }
+            
+            e.preventDefault();
+            hitboxMode = !hitboxMode;
+            
+            if (hitboxMode) {
+                document.body.classList.add('show-hitboxes');
+                showNotification('Modo Hitbox ACTIVADO - Presiona H para desactivar', 'info');
+                console.log('🎯 Hitbox Debug Mode: ON');
+            } else {
+                document.body.classList.remove('show-hitboxes');
+                showNotification('Modo Hitbox DESACTIVADO', 'info');
+                console.log('🎯 Hitbox Debug Mode: OFF');
+            }
+        }
+    });
+}
+
+// Add to initialization
+document.addEventListener('DOMContentLoaded', function() {
+    initContactForm();
+    initScrollAnimations();
+    initLazyLoading();
+    initParallaxEffect();
+    initHitboxToggle(); // Add hitbox toggle initialization
+});
